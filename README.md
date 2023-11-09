@@ -97,10 +97,10 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("byu");
+        let buy = document.getElementById("buy");
         let order = document.getElementById("order");
 
-        byu.addEventListener("click", () => {
+        buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + "  " + tg.initDataUnsafe.user.last_name;
