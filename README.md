@@ -92,8 +92,8 @@
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
-    </form>
         <button id="order">Оформить</button>
+    </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
