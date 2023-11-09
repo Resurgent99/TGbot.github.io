@@ -17,7 +17,7 @@
          }
 
          body {
-            font-family: 'Montserrat', sans-serif;\
+            font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
             background: var(--tg-theme-bg-color);
