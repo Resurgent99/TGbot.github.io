@@ -26,7 +26,7 @@
          #main {
              width: 100%;
              padding: 20px;
-             text-aling: center;
+             text-align: center;
          }
 
          h1 {
