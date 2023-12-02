@@ -2,124 +2,255 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=divice-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-
-         *{
+    img {
+         display: flex;
+     flex-direction: column;
+	     justify-content: center;
+	     align-items: center;
+     margin: 30px auto;
+     width: 70px;
+     }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        }
 
-         }
-
-         body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 200;
-            color: var(--tg-theme-text-color);
-            background: var(--tg-theme-bg-color);
-         }
-
-         #main {
-             width: 100%;
-             padding: 20px;
-             text-align: center;
-         }
-
-         h1 {
-            margin-top: 50px;
-            margin-bottom: 10px;
-         }
-
-         img {
-            width: 70px;
-            margin: 30px auto;
-         }
-
-         p {
-           width: 350px;
-           margin: 0 auto;
-         }
-
-         button {
-            border: 0;
-            border-radius: 5px;
-            margin-top: 50px;
-            height: 60px;
-            width: 200px;
-            font-size: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 500ms ease;
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
-         }
-
-         button:hover {
-            background: var(--tg-theme-secondary-bg-color);
-         }
-
-         #form {
-            display: none;
+        #container {
             text-align: center;
-         }
+        }
 
-         input {
-            width: 90%;
-            outline: none;
-            margin: 10px 5%;
-            padding: 15px 10px;
-            font-size: 14px;
-            border: 2px solid silver;
-            border-radius: 5px;
-         }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-         input:focus {
-            border-color: #db5d5d;
-         }
-</style>
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+	.form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+        }
+
+        .form-container input {
+            margin-bottom: 10px;
+        }
+    </style>
+ 
 </head>
 <body>
-    <div id = "main">
+    <div id="container">
         <h1>Онлайн магазин</h1>
-        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
-        <button id="buy">Купить</button>
+        <div id="imageContainer">
+            <img id="myImage" src="Pizza.png" alt="Картинка">
+        </div>
+       
+       <table id="myTable" style="display: none;">
+             <tbody>
+                <tr>
+                    <td>
+                        <img src="Блины.jpeg" alt="Блины">
+			<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+ <span class="total-price">0 руб.</span>
+                        <span class="quantity">0</span>
+                    </td>
+                    <td>
+                        <img src="Бургер.jpeg" alt="Бургер">
+<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+ <span class="total-price">0 руб.</span>
+                        <span class="quantity">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="Курица.jpeg" alt="Курица">
+<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+ <span class="total-price">0 руб.</span>
+                        <span class="quantity">0</span>
+                    </td>
+                    <td>
+                        <img src="Рыба.jpg" alt="Рыба">
+<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+                        <span class="quantity">0</span>
+<span class="total-price">0 руб.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="Фрукты.jpeg" alt="Фрукты">
+<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+ <span class="total-price">0 руб.</span>
+                        <span class="quantity">0</span>
+                    </td>
+                    <td>
+                        <img src="Яйцо.jpg" alt="Яйцо">
+<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+<span class="total-price">0 руб.</span>
+                        <span class="quantity">0</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="Мясо.jpg" alt="Мясо">
+<span class="price">100 руб.</span>
+                        <button onclick="changeQuantity(this, 1)">+</button>
+                        <button onclick="changeQuantity(this, -1)">-</button>
+ <span class="total-price">0 руб.</span>
+                        <span class="quantity">0</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	 <button id="showButton" onclick="showTable()">Купить</button>
+        <button id="addToCartButton" style="display: none;" onclick="addToCart()">Добавить в корзину</button>
     </div>
-    <form id="form">
-        <input type="text" placeholder="Имя" id="user_name">
-        <input type="text" placeholder="Email" id="user_email">
-        <input type="text" placeholder="Телефон" id="user_phone">
-        <button id="order">Оформить</button>
-    </form>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy");
-        let order = document.getElementById("order");
-        tg.expand();
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
 
-        buy.addEventListener("click", () => {
-            document.getElementById("main").style.display = "none";
-            document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + "  " + tg.initDataUnsafe.user.last_name;
-        });
+        function showTable() {
+            var table = document.getElementById("myTable");
+            var button = document.getElementById("showButton");
+	    var image = document.getElementById("myImage");	
+            var addToCartButton = document.getElementById("addToCartButton");
+            table.style.display = "table";
+            button.style.display = "none";
+	    image.style.display = "none";
+            addToCartButton.style.display = "inline-block";
+        }
+       function changeQuantity(element, value) {
+    var quantityElement = element.parentNode.querySelector('.quantity');
+    var quantity = parseInt(quantityElement.innerText);
+    quantity += value;
+    if (quantity >= 0) {
+        quantityElement.innerText = quantity.toString();
+        updateTotalPrice(element.parentNode);
+    }
+}
 
-        order.addEventListener("click", () => {
-            let name = document.getElementById("user_name").value;
-            let email = document.getElementById("user_email").value;
-            let phone = document.getElementById("user_phone").value;
-            let data = {
-                name: name,
-                email: email,
-                phone: phone
+function updateTotalPrice(row) {
+    var quantityElement = row.querySelector('.quantity');
+    var priceElement = row.querySelector('.price');
+    var quantity = parseInt(quantityElement.innerText);
+    var price = parseInt(priceElement.innerText);
+    var totalPriceElement = row.querySelector('.total-price');
+    var totalPrice = quantity * price;
+    totalPriceElement.innerText = totalPrice + ' руб.';
+}
 
+         function addToCart() {
+            var formContainer = document.createElement("div");
+            formContainer.id = "formContainer";
+
+            var nameLabel = document.createElement("label");
+            nameLabel.textContent = "Имя:";
+            var nameInput = document.createElement("input");
+            nameInput.type = "text";
+            nameInput.name = "name";
+            formContainer.appendChild(nameLabel);
+            formContainer.appendChild(nameInput);
+
+            var addressLabel = document.createElement("label");
+            addressLabel.textContent = "Адрес:";
+            var addressInput = document.createElement("input");
+            addressInput.type = "text";
+            addressInput.name = "address";
+            formContainer.appendChild(addressLabel);
+            formContainer.appendChild(addressInput);
+
+            var phoneLabel = document.createElement("label");
+            phoneLabel.textContent = "Номер телефона:";
+            var phoneInput = document.createElement("input");
+            phoneInput.type = "text";
+            phoneInput.name = "phone";
+            formContainer.appendChild(phoneLabel);
+            formContainer.appendChild(phoneInput);
+
+            var submitButton = document.createElement("button");
+            submitButton.textContent = "Отправить";
+            submitButton.onclick = sendOrder;
+            formContainer.appendChild(submitButton);
+
+            // Вставляем форму после кнопки "Добавить в корзину"
+	    var table = document.getElementById("myTable");
+            var addToCartButton = document.getElementById("addToCartButton");
+	    table.style.display = "none";
+            addToCartButton.style.display = "none";
+            addToCartButton.insertAdjacentElement("afterend", formContainer);
+        }
+
+        // Функция для отправки заказа в телеграм-бота
+        function sendOrder() {
+            var name = document.querySelector("input[name='name']").value;
+            var address = document.querySelector("input[name='address']").value;
+            var phone = document.querySelector("input[name='phone']").value;
+
+            var table = document.getElementById("myTable");
+            var rows = table.getElementsByTagName("tr");
+            var data = [];
+
+            // Проходимся по каждой строке таблицы, кроме заголовков
+            for (var i = 1; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var productName = cells[0].querySelector("img").alt;
+                var price = cells[0].querySelector(".price").innerText;
+                var quantity = cells[0].querySelector(".quantity").innerText;
+                var totalPrice = cells[0].querySelector(".total-price").innerText;
+
+                // Создаем объект с данными товара
+                var productData = {
+                    name: productName,
+                    price: price,
+                    quantity: quantity,
+                    totalPrice: totalPrice
+                };
+
+                // Добавляем объект в массив данных
+                data.push(productData);
             }
-            tg.sendData(JSON.stringify(data));
-            tg.close();
-        });
+
+            // Отправляем данные заказа и контактные данные в телеграм-бота
+            axios.post('https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage', {
+                chat_id: '<CHAT_ID>',
+                text: 'Заказ:\n' + JSON.stringify(data, null, 2) + '\n\n' +
+                      'Имя: ' + name + '\n' +
+                      'Адрес: ' + address + '\n' +
+                      'Номер телефона: ' + phone
+            })
+            .then(function (response) {
+                console.log('Заказ успешно отправлен в телеграм-бота');
+		tg.close();
+            })
+            .catch(function (error) {
+                console.error('Ошибка при отправке заказа в телеграм-бота', error);
+            });
+	    
+        }
+
     </script>
 </body>
 </html>
